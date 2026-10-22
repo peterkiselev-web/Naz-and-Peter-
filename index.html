@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Naz and Peter, currently in the talking stage. Please respect our privacy.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%F0%9F%92%97</text></svg>">
+<title>Naz &amp; Peter, Unofficially</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Figtree:wght@400;500;700&family=Shrikhand&display=swap">
+<style>
+  /* Layout: one narrow column, a valentine card pretending to be an official press release */
+  :root {
+    --bg: #fff0f6;
+    --bg-2: #ffe1ee;
+    --paper: #ffffff;
+    --ink: #4a0e2c;
+    --ink-soft: #8a3f63;
+    --pink: #e0187a;
+    --on-pink: #ffffff;
+    --pink-soft: #ffc6de;
+    --line: #f3b6d0;
+    --polaroid: #ffffff;
+    --polaroid-ink: #4a0e2c;
+    --font-display: "Shrikhand", Georgia, "Times New Roman", serif;
+    --font-body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-mono: "DM Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #22081a;
+      --bg-2: #321027;
+      --paper: #3a1330;
+      --ink: #ffe4f0;
+      --ink-soft: #e3a6c3;
+      --pink: #ff6aa6;
+      --on-pink: #2a0718;
+      --pink-soft: #5e1d43;
+      --line: #5a2147;
+      --polaroid: #f8e8f0;
+      --polaroid-ink: #4a0e2c;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #22081a;
+    --bg-2: #321027;
+    --paper: #3a1330;
+    --ink: #ffe4f0;
+    --ink-soft: #e3a6c3;
+    --pink: #ff6aa6;
+    --on-pink: #2a0718;
+    --pink-soft: #5e1d43;
+    --line: #5a2147;
+    --polaroid: #f8e8f0;
+    --polaroid-ink: #4a0e2c;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+  .wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  h1, h2 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 1.1;
+    text-wrap: balance;
+    margin: 0;
+  }
+  h2 { font-size: clamp(1.6rem, 5vw, 2.1rem); color: var(--pink); }
+  p { margin: 0; }
+  .label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-2);
+    border-bottom: 2px dashed var(--line);
+  }
+  .hero .wrap {
+    position: relative;
+    z-index: 1;
+    padding-block: 56px 48px;
+    text-align: center;
+    display: grid;
+    gap: 18px;
+    justify-items: center;
+  }
+  .hero h1 {
+    font-size: clamp(3.2rem, 14vw, 6rem);
+    color: var(--pink);
+  }
+  .hero h1 .amp { color: var(--ink); font-size: 0.7em; vertical-align: 0.08em; }
+  .hero .sub { max-width: 30ch; font-size: 1.15rem; }
+  .floaty {
+    position: absolute;
+    color: var(--pink);
+    opacity: 0.22;
+    line-height: 1;
+    pointer-events: none;
+    animation: bob 6s ease-in-out infinite;
+  }
+  @keyframes bob {
+    0%, 100% { transform: translateY(0) rotate(-8deg); }
+    50% { transform: translateY(-14px) rotate(8deg); }
+  }
+
+  .counter {
+    display: inline-grid;
+    gap: 4px;
+    justify-items: center;
+    background: var(--paper);
+    border: 2px solid var(--pink);
+    border-radius: 18px;
+    padding: 14px 22px 16px;
+  }
+  .counter .big {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    line-height: 1;
+    color: var(--pink);
+    font-variant-numeric: tabular-nums;
+  }
+  .counter .small {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Sections */
+  main .wrap { display: grid; gap: 64px; padding-block: 56px 40px; }
+  section { display: grid; gap: 16px; }
+
+  /* Photo */
+  .exhibit { justify-items: center; text-align: center; }
+  .polaroid {
+    margin: 8px 0 0;
+    background: var(--polaroid);
+    color: var(--polaroid-ink);
+    padding: 12px 12px 18px;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(120, 10, 60, 0.18);
+    transform: rotate(-2deg);
+    max-width: min(420px, 100%);
+    display: grid;
+    gap: 12px;
+  }
+  .polaroid img { display: block; width: 100%; height: auto; border-radius: 2px; }
+  .polaroid figcaption {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; max-width: 520px; }
+  .chip {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: var(--pink-soft);
+    color: var(--ink);
+  }
+
+  /* How we met */
+  .confession {
+    background: var(--paper);
+    border: 2px solid var(--line);
+    border-radius: 16px;
+    padding: 22px;
+    display: grid;
+    gap: 14px;
+  }
+  .confession .whisper { font-size: 0.95rem; color: var(--ink-soft); }
+  .story {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    line-height: 1.3;
+    color: var(--pink);
+    min-height: 3.5em;
+    display: flex;
+    align-items: center;
+    transition: opacity 0.2s ease;
+  }
+  .story.fading { opacity: 0; }
+
+  button {
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    border: 0;
+    border-radius: 999px;
+    padding: 12px 22px;
+    background: var(--pink);
+    color: var(--on-pink);
+    justify-self: start;
+    transition: transform 0.15s ease;
+  }
+  button:hover { transform: scale(1.04); }
+  button:active { transform: scale(0.97); }
+  button:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+
+  /* Status board */
+  .status { display: grid; border-top: 2px dashed var(--line); }
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 2px dashed var(--line);
+  }
+  .row span:first-child { min-width: 0; }
+  .pill {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    white-space: nowrap;
+    padding: 4px 12px;
+    border-radius: 999px;
+    border: 1.5px solid var(--pink);
+    color: var(--pink);
+  }
+  .pill.on { background: var(--pink); color: var(--on-pink); }
+
+  /* Progress */
+  .bar {
+    height: 22px;
+    border-radius: 999px;
+    background: var(--pink-soft);
+    overflow: hidden;
+  }
+  .bar > div {
+    height: 100%;
+    width: 24%;
+    background: var(--pink);
+    border-radius: 999px;
+  }
+  .stages {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 6px;
+  }
+  .stages li { display: flex; gap: 10px; align-items: baseline; }
+  .stages li::before { content: "\2661"; color: var(--pink); }
+  .stages li.done::before { content: "\2665"; }
+  .stages .here {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: var(--pink);
+    color: var(--on-pink);
+    padding: 1px 8px;
+    border-radius: 999px;
+  }
+  .stages .muted { color: var(--ink-soft); }
+
+  /* Timeline */
+  .timeline { list-style: none; margin: 0; padding: 0; display: grid; gap: 20px; }
+  .timeline li {
+    display: grid;
+    grid-template-columns: 5.5rem 1fr;
+    gap: 16px;
+  }
+  .timeline .when {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--pink);
+    padding-top: 3px;
+  }
+  .timeline strong { display: block; }
+  .timeline p { color: var(--ink-soft); }
+  .timeline li > div { min-width: 0; }
+
+  /* FAQ */
+  details {
+    border-bottom: 2px dashed var(--line);
+    padding: 14px 0;
+  }
+  details:first-of-type { border-top: 2px dashed var(--line); }
+  summary {
+    cursor: pointer;
+    font-weight: 700;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "\2661"; color: var(--pink); }
+  details[open] summary::after { content: "\2665"; }
+  summary:focus-visible { outline: 3px solid var(--pink); outline-offset: 4px; border-radius: 4px; }
+  details p { margin-top: 8px; color: var(--ink-soft); }
+
+  /* Heart button */
+  .send { justify-items: center; text-align: center; }
+  .send button { justify-self: center; font-size: 1.15rem; padding: 14px 28px; }
+  .burst {
+    position: fixed;
+    pointer-events: none;
+    color: var(--pink);
+    font-size: 1.6rem;
+    line-height: 1;
+    z-index: 20;
+    animation: rise 1.4s ease-out forwards;
+  }
+  @keyframes rise {
+    from { transform: translate(0, 0) scale(0.6); opacity: 1; }
+    to { transform: translate(var(--dx), -180px) scale(1.3); opacity: 0; }
+  }
+
+  footer .wrap {
+    padding-block: 24px 48px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    display: grid;
+    gap: 6px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .floaty { animation: none; }
+    .burst { display: none; }
+    button, .story { transition: none; }
+  }
+  body { margin: 0; }
+  img { max-width: 100%; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <span class="floaty" aria-hidden="true" style="left:6%;top:14%;font-size:2.4rem">&#9829;</span>
+  <span class="floaty" aria-hidden="true" style="left:84%;top:10%;font-size:3.2rem;animation-delay:-2s">&#9829;</span>
+  <span class="floaty" aria-hidden="true" style="left:12%;top:70%;font-size:3rem;animation-delay:-4s">&#9829;</span>
+  <span class="floaty" aria-hidden="true" style="left:78%;top:66%;font-size:2rem;animation-delay:-1s">&#9829;</span>
+  <span class="floaty" aria-hidden="true" style="left:46%;top:4%;font-size:1.4rem;animation-delay:-3s">&#9829;</span>
+  <div class="wrap">
+    <p class="label">An official announcement of nothing official</p>
+    <h1>Naz <span class="amp">&amp;</span> Peter</h1>
+    <p class="sub">Currently in the talking stage. Please respect our privacy during this difficult time. (We made a website.)</p>
+    <div class="counter" role="timer" aria-live="off">
+      <span class="label">Talking stage since 30 Sep 2026</span>
+      <span class="big"><span id="days">22</span> days</span>
+      <span class="small" id="clock">and counting</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <section class="exhibit">
+      <p class="label">Exhibit A</p>
+      <h2>Two people who are definitely not in a relationship</h2>
+      <figure class="polaroid">
+        <img src="naz-peter.jpg" width="1000" height="1333" alt="Peter and Naz sitting together in a green patterned booth surrounded by palm plants, with cocktails on a wooden table.">
+        <figcaption>Sharing a booth. Strictly casual.</figcaption>
+      </figure>
+      <div class="chips">
+        <span class="chip">Fur coat: hers</span>
+        <span class="chip">Cocktail with a flower in it: his</span>
+        <span class="chip">Pink phone: on standby</span>
+        <span class="chip">Witnesses: several ferns</span>
+      </div>
+    </section>
+
+    <section>
+      <p class="label">How we met</p>
+      <h2>We need to talk about where we met</h2>
+      <div class="confession">
+        <p>We met at <strong>Ministry of Sound</strong> on 30 September 2026. Names were exchanged at 120 decibels and spellings were confirmed later by text.</p>
+        <p class="whisper">We are not proud of this. We would like to move on. For use at family dinners, weddings and any future speeches, please choose one of our approved cover stories instead:</p>
+        <p class="story" id="story" aria-live="polite">We met at a pottery class. Our hands touched over the same lump of clay.</p>
+        <button type="button" id="storyBtn">Give me a better story</button>
+      </div>
+    </section>
+
+    <section>
+      <p class="label">Relationship status board</p>
+      <h2>Where things stand</h2>
+      <div class="status">
+        <div class="row"><span>Talking stage</span><span class="pill on">Active</span></div>
+        <div class="row"><span>Exclusive</span><span class="pill">Under review</span></div>
+        <div class="row"><span>Instagram official</span><span class="pill">Absolutely not</span></div>
+        <div class="row"><span>Met the parents</span><span class="pill">LOL</span></div>
+        <div class="row"><span>Pet names</span><span class="pill">In development</span></div>
+        <div class="row"><span>Telling people about Ministry of Sound</span><span class="pill">Never</span></div>
+      </div>
+    </section>
+
+    <section>
+      <p class="label">Relationship loading</p>
+      <h2>24% complete</h2>
+      <div class="bar" role="progressbar" aria-valuenow="24" aria-valuemin="0" aria-valuemax="100" aria-label="Relationship progress"><div></div></div>
+      <ul class="stages">
+        <li class="done"><span>Ministry of Sound</span></li>
+        <li class="done"><span>Talking stage</span> <span class="here">You are here</span></li>
+        <li><span>Exclusive</span></li>
+        <li><span>Official</span></li>
+        <li><span>Instagram official</span></li>
+        <li><span class="muted">Admitting where we met (estimated: never)</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <p class="label">A brief history</p>
+      <h2>The story so far</h2>
+      <ol class="timeline">
+        <li>
+          <span class="when">30 Sep</span>
+          <div><strong>Ministry of Sound</strong><p>Eye contact across a sticky dance floor. Neither party will be taking questions about this.</p></div>
+        </li>
+        <li>
+          <span class="when">1 Oct</span>
+          <div><strong>The follow-up text</strong><p>Drafted several times. Sent as if it took no effort at all.</p></div>
+        </li>
+        <li>
+          <span class="when">Recently</span>
+          <div><strong>The fancy booth</strong><p>Green velvet, a lot of palms, and a cocktail with an actual flower in it. Proof that this can happen somewhere with chairs.</p></div>
+        </li>
+        <li>
+          <span class="when">21 Oct</span>
+          <div><strong>Peter builds a website</strong><p>Experts describe this as "a lot for three weeks in". Peter disagrees.</p></div>
+        </li>
+        <li>
+          <span class="when">22 Oct</span>
+          <div><strong>The website goes public</strong><p>Now on the actual internet. There is no going back.</p></div>
+        </li>
+      </ol>
+    </section>
+
+    <section>
+      <p class="label">Frequently asked questions</p>
+      <h2>Questions we will not fully answer</h2>
+      <div>
+        <details>
+          <summary>So are you two together?</summary>
+          <p>We are seeing each other. That is all we are prepared to say at this time.</p>
+        </details>
+        <details>
+          <summary>Where did you meet?</summary>
+          <p>A very loud room in South London. Next question.</p>
+        </details>
+        <details>
+          <summary>Is it serious?</summary>
+          <p>It has been <span class="day-count">22</span> days and it has its own website. You tell us.</p>
+        </details>
+        <details>
+          <summary>When will it be official?</summary>
+          <p>Our legal team is still reading the talking stage terms and conditions.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="send">
+      <h2>Support the talking stage</h2>
+      <p>Every heart sent adds absolutely nothing to the relationship, but it feels nice.</p>
+      <button type="button" id="heartBtn">Send a heart &#9829;</button>
+      <p class="label" id="heartCount">Hearts sent: 0</p>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>This website is not a declaration of anything. Any resemblance to a relationship is purely coincidental.</p>
+    <p>No nightclubs were endorsed in the making of this page.</p>
+  </div>
+</footer>
+
+<script>
+  // The night it all started: 30 September 2026
+  const start = new Date(2026, 8, 30, 0, 0, 0);
+  const daysEl = document.getElementById("days");
+  const clockEl = document.getElementById("clock");
+  const dayCountEls = document.querySelectorAll(".day-count");
+
+  function tick() {
+    const ms = Math.max(0, Date.now() - start.getTime());
+    const d = Math.floor(ms / 864e5);
+    const h = Math.floor(ms / 36e5) % 24;
+    const m = Math.floor(ms / 6e4) % 60;
+    const s = Math.floor(ms / 1e3) % 60;
+    const pad = (n) => String(n).padStart(2, "0");
+    daysEl.textContent = d;
+    clockEl.textContent = `${pad(h)}h ${pad(m)}m ${pad(s)}s and counting`;
+    dayCountEls.forEach((el) => { el.textContent = d; });
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  const stories = [
+    "We met at a pottery class. Our hands touched over the same lump of clay.",
+    "Her grandmother set us up after a very wholesome Sunday lunch.",
+    "We both reached for the last sourdough loaf at Borough Market.",
+    "A silent book club. Nobody spoke. It was beautiful.",
+    "We met volunteering at a donkey sanctuary in Devon.",
+    "Our dogs met first. We do not have dogs.",
+    "We were both in the British Library looking for the same out-of-print book.",
+    "A mutual friend's very civilised dinner party. There were place cards.",
+    "We met on a countryside walk. Peter was lost. Naz had a map.",
+    "A classical music evening. We both clapped between movements and bonded over the shame.",
+    "Hinge, like normal people."
+  ];
+  const storyEl = document.getElementById("story");
+  let storyIndex = 0;
+  document.getElementById("storyBtn").addEventListener("click", () => {
+    let next = storyIndex;
+    while (next === storyIndex) next = Math.floor(Math.random() * stories.length);
+    storyIndex = next;
+    storyEl.classList.add("fading");
+    setTimeout(() => {
+      storyEl.textContent = stories[storyIndex];
+      storyEl.classList.remove("fading");
+    }, 200);
+  });
+
+  const heartBtn = document.getElementById("heartBtn");
+  const heartCountEl = document.getElementById("heartCount");
+  let hearts = 0;
+  try { hearts = parseInt(localStorage.getItem("nazPeterHearts") || "0", 10) || 0; } catch (e) {}
+  const showHearts = () => { heartCountEl.textContent = `Hearts sent: ${hearts}`; };
+  showHearts();
+
+  heartBtn.addEventListener("click", () => {
+    hearts += 1;
+    showHearts();
+    try { localStorage.setItem("nazPeterHearts", String(hearts)); } catch (e) {}
+    const r = heartBtn.getBoundingClientRect();
+    for (let i = 0; i < 7; i++) {
+      const h = document.createElement("span");
+      h.className = "burst";
+      h.setAttribute("aria-hidden", "true");
+      h.textContent = "♥";
+      h.style.left = `${r.left + r.width / 2 - 12 + (Math.random() * 40 - 20)}px`;
+      h.style.top = `${r.top}px`;
+      h.style.setProperty("--dx", `${Math.random() * 160 - 80}px`);
+      h.style.animationDelay = `${i * 60}ms`;
+      document.body.appendChild(h);
+      setTimeout(() => h.remove(), 1600 + i * 60);
+    }
+  });
+</script>
+</body>
+</html>
