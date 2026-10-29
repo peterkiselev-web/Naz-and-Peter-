@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Naz and Peter, currently in the talking stage. Please respect our privacy.">
+<meta name="description" content="Naz and Peter, officially dating. Please respect our privacy.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%F0%9F%92%97</text></svg>">
-<title>Naz &amp; Peter, Unofficially</title>
+<title>Naz &amp; Peter, Officially</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Figtree:wght@400;500;700&family=Shrikhand&display=swap">
@@ -124,6 +124,21 @@
     50% { transform: translateY(-14px) rotate(8deg); }
   }
 
+  .badge {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    background: var(--pink);
+    color: var(--on-pink);
+    padding: 6px 18px 8px;
+    border-radius: 999px;
+    transform: rotate(-2deg);
+  }
+  .counters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
   .counter {
     display: inline-grid;
     gap: 4px;
@@ -166,6 +181,7 @@
     gap: 12px;
   }
   .polaroid img { display: block; width: 100%; height: auto; border-radius: 2px; }
+  .polaroid.tilt-right { transform: rotate(2deg); max-width: min(520px, 100%); }
   .polaroid figcaption {
     font-family: var(--font-display);
     font-size: 1.15rem;
@@ -249,7 +265,7 @@
   }
   .bar > div {
     height: 100%;
-    width: 24%;
+    width: 67%;
     background: var(--pink);
     border-radius: 999px;
   }
@@ -357,13 +373,21 @@
   <span class="floaty" aria-hidden="true" style="left:78%;top:66%;font-size:2rem;animation-delay:-1s">&#9829;</span>
   <span class="floaty" aria-hidden="true" style="left:46%;top:4%;font-size:1.4rem;animation-delay:-3s">&#9829;</span>
   <div class="wrap">
-    <p class="label">An official announcement of nothing official</p>
+    <p class="label">An official announcement of something actually official</p>
     <h1>Naz <span class="amp">&amp;</span> Peter</h1>
-    <p class="sub">Currently in the talking stage. Please respect our privacy during this difficult time. (We made a website.)</p>
-    <div class="counter" role="timer" aria-live="off">
-      <span class="label">Talking stage since 30 Sep 2026</span>
-      <span class="big"><span id="days">22</span> days</span>
-      <span class="small" id="clock">and counting</span>
+    <p class="sub">Officially dating since Friday 23 October. Please respect our privacy during this wonderful time. (We made a website.)</p>
+    <p class="badge" id="badge">Happy 1 month anniversary &#9829;</p>
+    <div class="counters">
+      <div class="counter" role="timer" aria-live="off">
+        <span class="label">Since Ministry of Sound, 29 Sep</span>
+        <span class="big"><span id="days">30</span> days</span>
+        <span class="small" id="clock">and counting</span>
+      </div>
+      <div class="counter">
+        <span class="label">Officially official since Fri 23 Oct</span>
+        <span class="big"><span id="officialDays">6</span> days</span>
+        <span class="small">No take-backs</span>
+      </div>
     </div>
   </div>
 </header>
@@ -372,7 +396,7 @@
   <div class="wrap">
 
     <section class="exhibit">
-      <p class="label">Exhibit A</p>
+      <p class="label">Exhibit A (before)</p>
       <h2>Two people who are definitely not in a relationship</h2>
       <figure class="polaroid">
         <img src="naz-peter.jpg" width="1000" height="1333" alt="Peter and Naz sitting together in a green patterned booth surrounded by palm plants, with cocktails on a wooden table.">
@@ -386,11 +410,26 @@
       </div>
     </section>
 
+    <section class="exhibit">
+      <p class="label">Exhibit B (after)</p>
+      <h2>Two people who are definitely in a relationship</h2>
+      <figure class="polaroid tilt-right">
+        <img src="naz-peter-official.jpg" width="1200" height="900" alt="Naz kissing Peter on the cheek while he grins, in a restaurant with a pink and green mural and paper bunting.">
+        <figcaption>Officially official. Cheek kiss on the record.</figcaption>
+      </figure>
+      <div class="chips">
+        <span class="chip">Cheek kiss: on the record</span>
+        <span class="chip">Arm around her: confirmed</span>
+        <span class="chip">Peter's smile: unbearable</span>
+        <span class="chip">Bunting: celebrating us, probably</span>
+      </div>
+    </section>
+
     <section>
       <p class="label">How we met</p>
       <h2>We need to talk about where we met</h2>
       <div class="confession">
-        <p>We met at <strong>Ministry of Sound</strong> on 30 September 2026. Names were exchanged at 120 decibels and spellings were confirmed later by text.</p>
+        <p>We met at <strong>Ministry of Sound</strong> on 29 September 2026. Names were exchanged at 120 decibels and spellings were confirmed later by text.</p>
         <p class="whisper">We are not proud of this. We would like to move on. For use at family dinners, weddings and any future speeches, please choose one of our approved cover stories instead:</p>
         <p class="story" id="story" aria-live="polite">We met at a pottery class. Our hands touched over the same lump of clay.</p>
         <button type="button" id="storyBtn">Give me a better story</button>
@@ -401,9 +440,10 @@
       <p class="label">Relationship status board</p>
       <h2>Where things stand</h2>
       <div class="status">
-        <div class="row"><span>Talking stage</span><span class="pill on">Active</span></div>
-        <div class="row"><span>Exclusive</span><span class="pill">Under review</span></div>
-        <div class="row"><span>Instagram official</span><span class="pill">Absolutely not</span></div>
+        <div class="row"><span>Talking stage</span><span class="pill">Completed</span></div>
+        <div class="row"><span>Exclusive</span><span class="pill on">Yes</span></div>
+        <div class="row"><span>Official</span><span class="pill on">Since Fri 23 Oct</span></div>
+        <div class="row"><span>Instagram official</span><span class="pill">Under review</span></div>
         <div class="row"><span>Met the parents</span><span class="pill">LOL</span></div>
         <div class="row"><span>Pet names</span><span class="pill">In development</span></div>
         <div class="row"><span>Telling people about Ministry of Sound</span><span class="pill">Never</span></div>
@@ -412,13 +452,13 @@
 
     <section>
       <p class="label">Relationship loading</p>
-      <h2>24% complete</h2>
-      <div class="bar" role="progressbar" aria-valuenow="24" aria-valuemin="0" aria-valuemax="100" aria-label="Relationship progress"><div></div></div>
+      <h2>67% complete</h2>
+      <div class="bar" role="progressbar" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100" aria-label="Relationship progress"><div></div></div>
       <ul class="stages">
         <li class="done"><span>Ministry of Sound</span></li>
-        <li class="done"><span>Talking stage</span> <span class="here">You are here</span></li>
-        <li><span>Exclusive</span></li>
-        <li><span>Official</span></li>
+        <li class="done"><span>Talking stage</span></li>
+        <li class="done"><span>Exclusive</span></li>
+        <li class="done"><span>Official</span> <span class="here">You are here</span></li>
         <li><span>Instagram official</span></li>
         <li><span class="muted">Admitting where we met (estimated: never)</span></li>
       </ul>
@@ -429,15 +469,15 @@
       <h2>The story so far</h2>
       <ol class="timeline">
         <li>
-          <span class="when">30 Sep</span>
+          <span class="when">29 Sep</span>
           <div><strong>Ministry of Sound</strong><p>Eye contact across a sticky dance floor. Neither party will be taking questions about this.</p></div>
         </li>
         <li>
-          <span class="when">1 Oct</span>
+          <span class="when">30 Sep</span>
           <div><strong>The follow-up text</strong><p>Drafted several times. Sent as if it took no effort at all.</p></div>
         </li>
         <li>
-          <span class="when">Recently</span>
+          <span class="when">October</span>
           <div><strong>The fancy booth</strong><p>Green velvet, a lot of palms, and a cocktail with an actual flower in it. Proof that this can happen somewhere with chairs.</p></div>
         </li>
         <li>
@@ -448,6 +488,14 @@
           <span class="when">22 Oct</span>
           <div><strong>The website goes public</strong><p>Now on the actual internet. There is no going back.</p></div>
         </li>
+        <li>
+          <span class="when">Fri 23 Oct</span>
+          <div><strong>It becomes official</strong><p>Peter comes over to hers. The talking stage is over. Further details are classified.</p></div>
+        </li>
+        <li>
+          <span class="when">29 Oct</span>
+          <div><strong>One month since Ministry</strong><p>Happy anniversary. Peter celebrates by updating the website. Again.</p></div>
+        </li>
       </ol>
     </section>
 
@@ -457,7 +505,7 @@
       <div>
         <details>
           <summary>So are you two together?</summary>
-          <p>We are seeing each other. That is all we are prepared to say at this time.</p>
+          <p>Yes. Officially, since Friday 23 October. We will now be insufferable.</p>
         </details>
         <details>
           <summary>Where did you meet?</summary>
@@ -465,17 +513,17 @@
         </details>
         <details>
           <summary>Is it serious?</summary>
-          <p>It has been <span class="day-count">22</span> days and it has its own website. You tell us.</p>
+          <p>One month, two photos and a website. You do the maths.</p>
         </details>
         <details>
-          <summary>When will it be official?</summary>
-          <p>Our legal team is still reading the talking stage terms and conditions.</p>
+          <summary>When will it be Instagram official?</summary>
+          <p>Our legal team is still reviewing the caption.</p>
         </details>
       </div>
     </section>
 
     <section class="send">
-      <h2>Support the talking stage</h2>
+      <h2>Support the relationship</h2>
       <p>Every heart sent adds absolutely nothing to the relationship, but it feels nice.</p>
       <button type="button" id="heartBtn">Send a heart &#9829;</button>
       <p class="label" id="heartCount">Hearts sent: 0</p>
@@ -486,20 +534,23 @@
 
 <footer>
   <div class="wrap">
-    <p>This website is not a declaration of anything. Any resemblance to a relationship is purely coincidental.</p>
+    <p>This website is now, officially, a declaration of something.</p>
     <p>No nightclubs were endorsed in the making of this page.</p>
   </div>
 </footer>
 
 <script>
-  // The night it all started: 30 September 2026
-  const start = new Date(2026, 8, 30, 0, 0, 0);
+  // Met at Ministry of Sound on 29 September 2026, official on Friday 23 October 2026
+  const met = new Date(2026, 8, 29, 0, 0, 0);
+  const official = new Date(2026, 9, 23, 0, 0, 0);
   const daysEl = document.getElementById("days");
   const clockEl = document.getElementById("clock");
-  const dayCountEls = document.querySelectorAll(".day-count");
+  const officialDaysEl = document.getElementById("officialDays");
+  const badgeEl = document.getElementById("badge");
 
   function tick() {
-    const ms = Math.max(0, Date.now() - start.getTime());
+    const now = Date.now();
+    const ms = Math.max(0, now - met.getTime());
     const d = Math.floor(ms / 864e5);
     const h = Math.floor(ms / 36e5) % 24;
     const m = Math.floor(ms / 6e4) % 60;
@@ -507,8 +558,22 @@
     const pad = (n) => String(n).padStart(2, "0");
     daysEl.textContent = d;
     clockEl.textContent = `${pad(h)}h ${pad(m)}m ${pad(s)}s and counting`;
-    dayCountEls.forEach((el) => { el.textContent = d; });
+    officialDaysEl.textContent = Math.max(0, Math.floor((now - official.getTime()) / 864e5));
   }
+
+  // Whole months since Ministry, celebrated on the 29th
+  function anniversary() {
+    const now = new Date();
+    let months = (now.getFullYear() - met.getFullYear()) * 12 + now.getMonth() - met.getMonth();
+    if (now.getDate() < met.getDate()) months -= 1;
+    if (months < 1) { badgeEl.hidden = true; return; }
+    const unit = months === 1 ? "month" : "months";
+    badgeEl.textContent = now.getDate() === met.getDate()
+      ? `Happy ${months} ${unit} anniversary ♥`
+      : `${months} ${unit} since Ministry ♥`;
+  }
+
+  anniversary();
   tick();
   setInterval(tick, 1000);
 
