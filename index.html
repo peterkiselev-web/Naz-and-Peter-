@@ -256,6 +256,26 @@
   }
   .pill.on { background: var(--pink); color: var(--on-pink); }
 
+  /* Incident report */
+  .report { display: grid; margin: 0; border-top: 2px dashed var(--line); }
+  .report > div {
+    display: grid;
+    grid-template-columns: 8.5rem 1fr;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 2px dashed var(--line);
+  }
+  .report dt {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--pink);
+    padding-top: 3px;
+  }
+  .report dd { margin: 0; min-width: 0; }
+  .report .arrow { color: var(--pink); }
+
   /* Progress */
   .bar {
     height: 22px;
@@ -375,7 +395,7 @@
   <div class="wrap">
     <p class="label">An official announcement of something actually official</p>
     <h1>Naz <span class="amp">&amp;</span> Peter</h1>
-    <p class="sub">Officially dating since Friday 23 October. The families have been informed. Please respect our privacy during this wonderful time. (We made a website.)</p>
+    <p class="sub">Officially dating since Friday 23 October. The families have been informed, one of them by accident. Please respect our privacy during this wonderful time. (We made a website.)</p>
     <p class="badge" id="badge">Happy 1 month anniversary &#9829;</p>
     <div class="counters">
       <div class="counter" role="timer" aria-live="off">
@@ -460,10 +480,25 @@
         <div class="row"><span>Official</span><span class="pill on">Since Fri 23 Oct</span></div>
         <div class="row"><span>Instagram official</span><span class="pill">Under review</span></div>
         <div class="row"><span>Met her brother</span><span class="pill on">Survived</span></div>
-        <div class="row"><span>Introduced to Peter's family in Dubai</span><span class="pill on">Done</span></div>
+        <div class="row"><span>Peter's family in Dubai</span><span class="pill on">Fully informed</span></div>
+        <div class="row"><span>Trust in view-once photos</span><span class="pill">Zero</span></div>
         <div class="row"><span>Pet names</span><span class="pill">In development</span></div>
         <div class="row"><span>Telling the families about Ministry of Sound</span><span class="pill">Never</span></div>
       </div>
+    </section>
+
+    <section>
+      <p class="label">Incident report, 2 Nov 2026</p>
+      <h2>The Dubai leak</h2>
+      <dl class="report">
+        <div><dt>Incident</dt><dd>Unauthorised forwarding of a view-once photo</dd></div>
+        <div><dt>Evidence</dt><dd>One photo of Naz drinking a mango juice, at night</dd></div>
+        <div><dt>Security used</dt><dd>View once</dd></div>
+        <div><dt>Countermeasure</dt><dd>A second phone</dd></div>
+        <div><dt>Chain of custody</dt><dd>Peter <span class="arrow">&rarr;</span> Stepmom <span class="arrow">&rarr;</span> Stepmom's second phone <span class="arrow">&rarr;</span> Dad <span class="arrow">&rarr;</span> Everyone in Dubai</dd></div>
+        <div><dt>Current reach</dt><dd>All of Dubai (estimated)</dd></div>
+        <div><dt>Lesson learned</dt><dd>View once is a suggestion. Never underestimate a stepmom with two phones.</dd></div>
+      </dl>
     </section>
 
     <section>
@@ -515,7 +550,11 @@
         </li>
         <li>
           <span class="when">Mon 2 Nov</span>
-          <div><strong>The family stage</strong><p>Peter meets her brother and survives. Naz is introduced to Peter's family in Dubai. Both families now know about this. Neither knows about Ministry of Sound.</p></div>
+          <div><strong>The family stage</strong><p>Peter meets her brother and survives.</p></div>
+        </li>
+        <li>
+          <span class="when">2 Nov, night</span>
+          <div><strong>The Dubai leak</strong><p>Peter sends his stepmom a view-once photo of Naz with a mango juice, confident it will vanish. The stepmom has a second phone. She photographs the photo and shows his dad. Peter now assumes all of Dubai knows. Dubai still does not know about Ministry of Sound.</p></div>
         </li>
       </ol>
     </section>
@@ -538,7 +577,7 @@
         </details>
         <details>
           <summary>Do the families know?</summary>
-          <p>Her brother has met Peter. Peter's family in Dubai has been introduced to Naz. Nobody has been told about Ministry of Sound, and nobody will be.</p>
+          <p>Her brother has met Peter. Peter's family in Dubai found out through a view-once photo, a stepmom with a second phone and his dad, so assume all of Dubai knows. Nobody has been told about Ministry of Sound, and nobody will be.</p>
         </details>
         <details>
           <summary>When will it be Instagram official?</summary>
@@ -613,6 +652,7 @@
     "A mutual friend's very civilised dinner party. There were place cards.",
     "We met on a countryside walk. Peter was lost. Naz had a map.",
     "A classical music evening. We both clapped between movements and bonded over the shame.",
+    "A juice bar in Dubai. She ordered mango. Ask anyone in Dubai, they all know.",
     "Hinge, like normal people."
   ];
   const storyEl = document.getElementById("story");
